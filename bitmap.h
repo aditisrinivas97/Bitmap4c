@@ -20,7 +20,7 @@ void print_bitmap(uint8_t * bitmap, uint64_t bitmap_size);
 /*
 Free the heap memory taken up by the bitmap.
 */
-int free_bitmap(uint8_t * bitmap);
+int free_bitmap(uint8_t ** bitmap);
 
 /*
 Clear the bit at `bitno` of bitmap, i.e, set it to 0. If `bitno` is greated than size of the bitmap, undefined behaviour occurs.

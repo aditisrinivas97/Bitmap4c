@@ -102,7 +102,8 @@ void print_bitmap(uint8_t * bitmap, uint64_t bitmap_size){
 }
 
 
-int free_bitmap(uint8_t * bitmap){
-    free(bitmap);
+int free_bitmap(uint8_t ** bitmap){
+    free(*bitmap);
+    *bitmap = NULL;
     return 0;
 }
