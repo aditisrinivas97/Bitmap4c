@@ -89,6 +89,13 @@ uint64_t get_first_set_bit(uint8_t * bitmap, uint64_t bitmap_size) {
         return -1;
 }
 
+uint64_t check_bit(uint8_t * bitmap, uint64_t bitno){
+    uint64_t index = bitno / 8;
+    int bit_index = bitno % 8;
+
+    return ((bitmap[index] >> bit_index) & 0x01);
+}
+
 void print_bitmap(uint8_t * bitmap, uint64_t bitmap_size){
     printf("Little Endian\n");
     int index = 0, bit_index = 0;

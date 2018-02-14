@@ -42,4 +42,9 @@ Get the first bit of `bitmap` that is unset, i.e, set to 0.
 */
 uint64_t get_first_unset_bit(uint8_t * bitmap, uint64_t bitmap_size); 
 
+/*
+Get the status of the bit at position `bitno`
+*/
+uint64_t check_bit(uint8_t * bitmap, uint64_t bitno);
+
 #endif
