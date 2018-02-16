@@ -1,12 +1,16 @@
 #include "bitmap.h"
 
 int create_bitmap(uint8_t ** bitmap, uint64_t * bitmap_size) {
-    (* bitmap) = (uint8_t *)calloc(sizeof(uint8_t), (* bitmap_size) / 8);
+    if((* bitmap_size) % 8 != 0){
+       (* bitmap_size) = ((* bitmap_size) + 1) / 8; 
+    }
+    else{
+        (* bitmap_size) = (* bitmap_size) / 8;
+    }
+    (* bitmap) = (uint8_t *)calloc(sizeof(uint8_t), (* bitmap_size));
     
     if(!(* bitmap))
         return -ENOMEM;
-    
-    (* bitmap_size) = (* bitmap_size) / 8;
 
     return 0;
 }
